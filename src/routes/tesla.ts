@@ -6,23 +6,24 @@ const router = Router();
 
 router.get('/tesla', async (req, res) => {
 
-  const units: number[] = [350000, 499550, 750000];
+  const units: number[] = [350000, 849550, 1599550];
+  const singleVehicleEmission = 4.6; // Metric Ton
 
 
   const Y2019: DataInterface = {
-    lessCarbonEmissions: "5000MT",
+    lessCarbonEmissions: parseInt(String(units[0] * singleVehicleEmission)) +"MT",
     totalUnits: units[0],
     percentage: 10,
   }
 
   const Y2020: DataInterface = {
-    lessCarbonEmissions: "5000MT",
+    lessCarbonEmissions: parseInt(String(units[1] * singleVehicleEmission)) +"MT",
     totalUnits: units[1],
     percentage: 10,
   }
 
   const Y2021: DataInterface = {
-    lessCarbonEmissions: "5000MT",
+    lessCarbonEmissions: parseInt(String(units[2] * singleVehicleEmission)) +"MT",
     totalUnits: units[2],
     percentage: 10,
   }
