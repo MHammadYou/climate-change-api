@@ -6,9 +6,26 @@ const router = Router();
 
 router.get('/tesla', async (req, res) => {
 
+
+
+
+
+  //
+  // const AllData = {
+  //   2019: Y2019,
+  //   2020: Y2020,
+  //   2021: Y2021
+  // }
+
+  await res.json("Hola");
+})
+
+
+router.get('/tesla/:year', async (req, res) => {
+
   const units: number[] = [350000, 849550, 1599550];
   const singleVehicleEmission = 4.6; // Metric Ton
-
+  const year: number = parseInt(req.params.year);
 
   const Y2019: DataInterface = {
     lessCarbonEmissions: parseInt(String(units[0] * singleVehicleEmission)) +"MT",
@@ -28,13 +45,19 @@ router.get('/tesla', async (req, res) => {
     percentage: 10,
   }
 
-  const AllData = {
-    2019: Y2019,
-    2020: Y2020,
-    2021: Y2021
+  switch (year) {
+    case 2019:
+      res.json(Y2019);
+      break;
+    case 2020:
+      res.json(Y2020);
+      break;
+    case 2021:
+      res.json(Y2021);
+      break;
+    default:
+      res.json({"error": "No data found"})
   }
-
-  await res.json([AllData]);
 })
 
 export default router;
