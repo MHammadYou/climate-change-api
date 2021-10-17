@@ -16,10 +16,12 @@ router.get('/windmill', async (req, res) => {
   * */
 
   const co2PerKwh = 0.92;
+  const totalWindMills = 341000;
 
 
   const data = {
-    energyInKWH: singleTurbineEnergy
+    energyInKWH: singleTurbineEnergy,
+    totalUnits: totalWindMills
   }
 
   res.json(data);
