@@ -1,4 +1,5 @@
 import { Router } from "express";
+import Data from "../data";
 
 const router = Router();
 
@@ -18,10 +19,15 @@ router.get('/windmill', async (req, res) => {
   const co2PerKwh = 0.92;
   const totalWindMills = 341000;
 
+  const totalEnergyInAMonth = totalWindMills * singleTurbineEnergy;
+  const lessCo2InAYear = totalEnergyInAMonth * co2PerKwh * 12;
 
-  const data = {
-    energyInKWH: singleTurbineEnergy,
-    totalUnits: totalWindMills
+
+
+  const data: Data = {
+    lessCarbonEmissions: `~${Math.trunc(lessCo2InAYear * 10)}MT`,
+    totalUnits: totalWindMills,
+    percentage: 8.4
   }
 
   res.json(data);
