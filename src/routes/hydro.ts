@@ -1,11 +1,24 @@
 import { Router } from "express";
+import DataInterface from "../data";
 
 
 const router = Router();
 
 
 router.get('/hydro', (req, res) => {
-  res.send("Hydro Power");
+
+  const elecProd = 30000 * 1000000000 ; // in kwh
+  const hydroProd = elecProd / 16.6;
+  const co2PerKwh = 0.92;
+
+
+  const data: DataInterface = {
+    lessCarbonEmissions: `~${Math.trunc(hydroProd * co2PerKwh * 10)}MT`,
+    totalUnits: 60000,
+    percentage: 16.6
+  }
+
+  res.json(data);
 })
 
 
