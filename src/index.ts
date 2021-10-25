@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import { teslaRoute, windMillRoute, solarPanelsRoute, hydroRoute, geoThermalRoute } from "./routes";
+import {teslaRoute, windMillRoute, solarPanelsRoute, hydroRoute, geoThermalRoute, nuclearRoute} from "./routes";
 
 dotenv.config();
 
@@ -15,6 +15,7 @@ app.use('/', windMillRoute);
 app.use('/', solarPanelsRoute);
 app.use('/', hydroRoute);
 app.use('/', geoThermalRoute);
+app.use('/', nuclearRoute);
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
