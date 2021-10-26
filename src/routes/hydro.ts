@@ -13,7 +13,7 @@ router.get('/hydro', (req, res) => {
 
 
   const data: DataInterface = {
-    lessCarbonEmissions: `~${Math.trunc(hydroProd * co2PerKwh * 10)}MT`,
+    lessCarbonEmissions: `~${Math.trunc(hydroProd / co2PerKwh * 10)}MT`,
     totalUnits: 60000,
     percentage: 16.6
   }

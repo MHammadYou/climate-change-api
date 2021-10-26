@@ -13,7 +13,7 @@ router.get('/geothermal', (req, res) => {
 
 
   const data: DataInterface = {
-    lessCarbonEmissions: `~${Math.trunc((totalEnergy / co2PerKwh) * 10)}MT`,
+    lessCarbonEmissions: `~${Math.trunc(totalEnergy / co2PerKwh * 10)}MT`,
     totalUnits: 200,
     percentage: 0.4
   }

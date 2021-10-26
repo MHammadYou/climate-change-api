@@ -9,7 +9,7 @@ router.get('/solar', (req, res) => {
 
   const SPEnergy1Year = 500; // kwh between 500 and 550
   const co2PerKwh = 0.92;
-  const SPlessEmissions = co2PerKwh * SPEnergy1Year;
+  const SPlessEmissions = SPEnergy1Year / co2PerKwh;
   const totalSPAprx = 1028400000;
 
 
