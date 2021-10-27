@@ -1,4 +1,5 @@
 import { Router } from "express";
+import DataInterface from "../data";
 
 
 const router = Router();
