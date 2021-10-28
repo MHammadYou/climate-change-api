@@ -5,7 +5,11 @@ import DataInterface from "../data";
 const router = Router();
 
 router.get('/nuclear-energy', (req, res) => {
-  res.send("Nuclear Energy");
+  const co2PerKwh = 0.92;
+
+  const data = {}
+
+  res.json(data);
 })
 
 
