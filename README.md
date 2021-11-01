@@ -1,3 +1,5 @@
 Routes  
 /tesla
-/solar
+/solar  
+/nuclear-energy
+
