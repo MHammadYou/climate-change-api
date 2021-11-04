@@ -1,6 +1,6 @@
 Routes  
-/tesla
+/tesla  
 /solar  
-/nuclear-energy
-/geothermal
+/nuclear-energy  
+/geothermal  
 /hydro
