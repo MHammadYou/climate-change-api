@@ -4,3 +4,4 @@ Routes
 /nuclear-energy  
 /geothermal  
 /hydro
+/windmill
