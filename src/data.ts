@@ -4,4 +4,8 @@ interface Data {
   percentage: number
 }
 
+const co2PerKwh = 0.92;
+
+
 export default Data;
+export { co2PerKwh }

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import DataInterface from "../data"
+import DataInterface, { co2PerKwh } from "../data"
 
 
 const router = Router();
@@ -8,7 +8,6 @@ const router = Router();
 router.get('/solar', (req, res) => {
 
   const SPEnergy1Year = 500; // kwh between 500 and 550
-  const co2PerKwh = 0.92;
   const SPlessEmissions = SPEnergy1Year / co2PerKwh;
   const totalSPAprx = 1028400000;
 

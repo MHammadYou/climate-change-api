@@ -1,5 +1,5 @@
 import { Router } from "express";
-import DataInterface from "../data";
+import DataInterface, { co2PerKwh } from "../data";
 
 
 const router = Router();
@@ -7,7 +7,6 @@ const router = Router();
 
 router.get('/geothermal', (req, res) => {
 
-  const co2PerKwh = 0.92;
   const totalEnergy = 16.7; // kwh
 
 

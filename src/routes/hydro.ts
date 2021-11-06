@@ -1,5 +1,5 @@
 import { Router } from "express";
-import DataInterface from "../data";
+import DataInterface, { co2PerKwh } from "../data";
 
 
 const router = Router();
@@ -9,7 +9,6 @@ router.get('/hydro', (req, res) => {
 
   const elecProd = 30000 * 1000000000 ; // in kwh
   const hydroProd = elecProd / 16.6;
-  const co2PerKwh = 0.92;
 
 
   const data: DataInterface = {

@@ -1,11 +1,10 @@
 import { Router } from "express";
-import DataInterface from "../data";
+import DataInterface, { co2PerKwh } from "../data";
 
 
 const router = Router();
 
 router.get('/nuclear', (req, res) => {
-  const co2PerKwh = 0.92;
   const totalPlants = 440;
   const energyPerPlant = 1000000 // kwH
 
