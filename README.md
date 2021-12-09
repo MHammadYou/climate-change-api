@@ -3,5 +3,5 @@ Routes
 /solar  
 /nuclear-energy  
 /geothermal  
-/hydro
+/hydro  
 /windmill
